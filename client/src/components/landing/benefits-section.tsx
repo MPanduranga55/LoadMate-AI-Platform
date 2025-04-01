@@ -69,7 +69,7 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-16 md:py-24 bg-gradient-to-br from-primary-800 to-primary-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Benefits For Your Business</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Benefits For Your Business</h2>
           <p className="text-lg text-primary-100">Our AI-powered platform delivers meaningful advantages for both carriers and shippers, revolutionizing how logistics operations function in today's competitive market.</p>
         </div>
         
@@ -77,7 +77,7 @@ const BenefitsSection = () => {
           <div className="inline-block px-6 py-3 rounded-full bg-white/10 border border-white/20 mb-6">
             <p className="text-xl font-medium text-amber-300">Up to 85% improvement in matching efficiency</p>
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Transform Your Logistics Operations</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Transform Your Logistics Operations</h3>
           <p className="text-lg text-primary-100 max-w-2xl mx-auto">FreightMate AI gives you the competitive edge with industry-leading technology that delivers measurable results and superior performance.</p>
         </div>
         
@@ -85,21 +85,21 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-colors animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out"
+              className="bg-white rounded-lg p-6 border border-primary-100 hover:shadow-lg transition-all animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out"
               style={{ transitionDelay: `${Math.min(index * 50, 500)}ms` }}
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500 text-white mb-4">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-              <p className="text-primary-100">{benefit.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-black">{benefit.title}</h3>
+              <p className="text-slate-800">{benefit.description}</p>
             </div>
           ))}
         </div>
         
         <div className="mt-16 text-center">
           <div className="inline-block px-8 py-4 rounded-lg bg-amber-500 hover:bg-amber-600 transition-colors animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out cursor-pointer">
-            <p className="text-lg font-semibold">See how customers increased revenue by 27%</p>
+            <p className="text-lg font-semibold text-black">See how customers increased revenue by 27%</p>
           </div>
         </div>
       </div>
