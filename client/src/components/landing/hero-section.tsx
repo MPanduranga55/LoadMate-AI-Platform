@@ -63,7 +63,7 @@ const HeroSection = () => {
             <div className="relative rounded-lg shadow-xl overflow-hidden bg-white p-1">
               <img
                 className="w-full h-auto rounded"
-                src="https://images.unsplash.com/photo-1585155784229-aff921ccfa10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80"
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80"
                 alt="AI Freight Matching Dashboard"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-800/90 to-primary-800/20 p-6 text-white">

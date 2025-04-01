@@ -11,3 +11,40 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Animation for elements that should animate on scroll */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* Class added when element is in viewport */
+  .animate-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Staggered animations using transitionDelay in inline styles */
+  .stagger-delay-1 {
+    transition-delay: 100ms;
+  }
+  .stagger-delay-2 {
+    transition-delay: 200ms;
+  }
+  .stagger-delay-3 {
+    transition-delay: 300ms;
+  }
+  .stagger-delay-4 {
+    transition-delay: 400ms;
+  }
+  .stagger-delay-5 {
+    transition-delay: 500ms;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}

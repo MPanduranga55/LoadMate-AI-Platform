@@ -9,34 +9,13 @@ import AboutSection from "@/components/landing/about-section";
 import CTASection from "@/components/landing/cta-section";
 import ContactSection from "@/components/landing/contact-section";
 import NewsletterSection from "@/components/landing/newsletter-section";
+import FreightMatcherSimulator from "@/components/landing/freight-matcher-simulator";
 import Footer from "@/components/landing/footer";
-import { useEffect } from "react";
+import useScrollAnimation from "@/hooks/use-scroll-animation";
 
 const Home = () => {
-  useEffect(() => {
-    // Scroll animation logic
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            entry.target.classList.remove("opacity-0", "translate-y-5");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll(".animate-on-scroll").forEach((element) => {
-      observer.observe(element);
-    });
-
-    return () => {
-      document.querySelectorAll(".animate-on-scroll").forEach((element) => {
-        observer.unobserve(element);
-      });
-    };
-  }, []);
+  // Hook for scroll animations
+  useScrollAnimation();
 
   return (
     <div className="font-sans text-slate-800 bg-white">
@@ -46,6 +25,7 @@ const Home = () => {
         <StatsSection />
         <FeaturesSection />
         <HowItWorksSection />
+        <FreightMatcherSimulator />
         <BenefitsSection />
         <TestimonialSection />
         <AboutSection />

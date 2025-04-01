@@ -46,6 +46,12 @@ const Navbar = () => {
                 How It Works
               </a>
               <a
+                href="#freight-matcher"
+                className="text-sm font-medium text-slate-800 hover:text-primary-700 transition-colors"
+              >
+                Try It
+              </a>
+              <a
                 href="#benefits"
                 className="text-sm font-medium text-slate-800 hover:text-primary-700 transition-colors"
               >
@@ -112,6 +118,13 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             How It Works
+          </a>
+          <a
+            href="#freight-matcher"
+            className="py-2 text-sm font-medium text-slate-800 hover:text-primary-700 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Try It
           </a>
           <a
             href="#benefits"

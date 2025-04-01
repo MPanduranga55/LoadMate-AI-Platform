@@ -30,7 +30,7 @@ const AboutSection = () => {
             <div className="relative bg-white rounded-lg shadow-xl overflow-hidden p-2">
               <img 
                 className="w-full h-auto rounded"
-                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80"
                 alt="FreightMate AI Team" 
               />
             </div>
