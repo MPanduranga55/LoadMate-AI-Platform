@@ -4,7 +4,11 @@ import {
   Maximize, 
   BarChart2, 
   Truck, 
-  Clock 
+  Clock,
+  Shield,
+  TrendingUp,
+  Map,
+  CheckCircle
 } from "lucide-react";
 
 const benefits = [
@@ -38,6 +42,26 @@ const benefits = [
     title: "Time Savings",
     description: "Reduce load matching time from hours to minutes with instant AI-powered recommendations and automated processes.",
   },
+  {
+    icon: <Shield className="h-5 w-5" />,
+    title: "Enhanced Security",
+    description: "Full transparency with secure tracking, documentation, and payment processing that protects all parties involved.",
+  },
+  {
+    icon: <TrendingUp className="h-5 w-5" />,
+    title: "Competitive Advantage",
+    description: "Stay ahead of the competition with AI-powered forecasting and predictive pricing models built on real-time data.",
+  },
+  {
+    icon: <Map className="h-5 w-5" />,
+    title: "Dynamic Route Optimization",
+    description: "Real-time route adjustments based on traffic, weather conditions, and delivery windows to ensure on-time performance.",
+  },
+  {
+    icon: <CheckCircle className="h-5 w-5" />,
+    title: "Compliance Assurance",
+    description: "Built-in tools to help maintain regulatory compliance with automatically generated and stored documentation.",
+  },
 ];
 
 const BenefitsSection = () => {
@@ -46,15 +70,23 @@ const BenefitsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Benefits For Your Business</h2>
-          <p className="text-lg text-primary-100">Our platform delivers tangible results for both carriers and shippers, transforming logistics operations.</p>
+          <p className="text-lg text-primary-100">Our AI-powered platform delivers meaningful advantages for both carriers and shippers, revolutionizing how logistics operations function in today's competitive market.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mb-16 text-center animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
+          <div className="inline-block px-6 py-3 rounded-full bg-white/10 border border-white/20 mb-6">
+            <p className="text-xl font-medium text-amber-300">Up to 85% improvement in matching efficiency</p>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Transform Your Logistics Operations</h3>
+          <p className="text-lg text-primary-100 max-w-2xl mx-auto">FreightMate AI gives you the competitive edge with industry-leading technology that delivers measurable results and superior performance.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
               className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-colors animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out"
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${Math.min(index * 50, 500)}ms` }}
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500 text-white mb-4">
                 {benefit.icon}
@@ -63,6 +95,12 @@ const BenefitsSection = () => {
               <p className="text-primary-100">{benefit.description}</p>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <div className="inline-block px-8 py-4 rounded-lg bg-amber-500 hover:bg-amber-600 transition-colors animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out cursor-pointer">
+            <p className="text-lg font-semibold">See how customers increased revenue by 27%</p>
+          </div>
         </div>
       </div>
     </section>
