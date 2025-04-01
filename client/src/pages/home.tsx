@@ -10,6 +10,7 @@ import CTASection from "@/components/landing/cta-section";
 import ContactSection from "@/components/landing/contact-section";
 import NewsletterSection from "@/components/landing/newsletter-section";
 import FreightMatcherSimulator from "@/components/landing/freight-matcher-simulator";
+import TruckDriverSection from "@/components/landing/truck-driver-section";
 import Footer from "@/components/landing/footer";
 import useScrollAnimation from "@/hooks/use-scroll-animation";
 
@@ -25,6 +26,7 @@ const Home = () => {
         <StatsSection />
         <FeaturesSection />
         <HowItWorksSection />
+        <TruckDriverSection />
         <FreightMatcherSimulator />
         <BenefitsSection />
         <TestimonialSection />
