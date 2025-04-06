@@ -9,7 +9,7 @@ const AboutSection = () => {
           <div className="animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">About LoadMate AI</h2>
             <p className="text-lg text-slate-600 mb-6">
-              Founded in 2019, LoadMate AI is revolutionizing the logistics industry by combining cutting-edge artificial intelligence with deep transportation expertise.
+              Founded in 2025, LoadMate AI is revolutionizing the logistics industry by combining cutting-edge artificial intelligence with deep transportation expertise.
             </p>
             <p className="text-lg text-slate-600 mb-6">
               Our mission is to eliminate inefficiencies in freight transportation by creating intelligent connections between shippers and carriers, reducing empty miles, and optimizing the entire logistics ecosystem.

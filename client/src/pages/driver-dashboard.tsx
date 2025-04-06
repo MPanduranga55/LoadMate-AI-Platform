@@ -127,7 +127,7 @@ const DriverDashboard = () => {
             
             <div className="flex items-center space-x-2">
               <Avatar>
-                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh" />
+                {/* <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh" /> */}
                 <AvatarFallback className="bg-primary-100 text-primary-800">RK</AvatarFallback>
               </Avatar>
               <div>
@@ -631,7 +631,7 @@ const DriverDashboard = () => {
                         <CardContent className="pt-6">
                           <div className="flex flex-col items-center">
                             <Avatar className="h-24 w-24 mb-4">
-                              <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh" alt="Driver Avatar" />
+                              <AvatarImage src="https://cdn.openart.ai/published/61ljwqdMS2Qs84MA9Wxu/utI9fNye_vzj5_raw.jpg" alt="Driver Avatar" />
                               <AvatarFallback>RK</AvatarFallback>
                             </Avatar>
                             <h3 className="text-xl font-bold">Rajesh Kumar</h3>

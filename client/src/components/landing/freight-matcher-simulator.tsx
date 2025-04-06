@@ -25,8 +25,8 @@ interface FreightMatch {
 
 const FreightMatcherSimulator = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [origin, setOrigin] = useState("Chicago, IL");
-  const [destination, setDestination] = useState("Denver, CO");
+  const [origin, setOrigin] = useState("Madurai");
+  const [destination, setDestination] = useState("Chennai");
   const [loadType, setLoadType] = useState("dry-van");
   const [weight, setWeight] = useState([15000]);
   const [matches, setMatches] = useState<FreightMatch[]>([]);

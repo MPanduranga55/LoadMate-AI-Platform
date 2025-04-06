@@ -81,8 +81,8 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: <MapPin className="h-5 w-5" />,
-      title: "Headquarters",
-      details: ["123 Tech Center Blvd, Suite 500", "Chicago, IL 60601"],
+      title: "Madurai",
+      details: ["Madurai"],
     },
     {
       icon: <Mail className="h-5 w-5" />,

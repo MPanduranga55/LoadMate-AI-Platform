@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <a href="#" className="flex items-center space-x-2">
-              <FreightIcon className="w-8 h-8 text-primary-800" />
+              
               <span className="text-xl font-bold text-primary-800">LoadMate AI</span>
             </a>
 
