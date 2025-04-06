@@ -71,11 +71,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
 
   const onDriverSubmit = (data: DriverLoginValues) => {
     console.log("Driver login data:", data);
-    // For demonstration, just close the modal
-    onClose();
-  };
-
-  const handleDriverGetStarted = () => {
+    // Close the modal and navigate to driver dashboard
     onClose();
     navigate("/driver");
   };
@@ -189,17 +185,10 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
                 <a href="#" className="text-sm text-blue-600 hover:underline">Forgot password?</a>
               </div>
 
-              <Button type="submit" className="w-full">Sign In</Button>
+              <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800">Sign In</Button>
               
               <div className="text-center mt-4">
-                <p className="text-sm text-slate-600 mb-2">New to FreightMate AI? Join our driver network</p>
-                <Button 
-                  onClick={handleDriverGetStarted} 
-                  type="button" 
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800"
-                >
-                  Get Started
-                </Button>
+                <p className="text-sm text-slate-600">New to FreightMate AI? <a href="#" className="text-blue-600 hover:underline">Create an account</a></p>
               </div>
             </form>
           </TabsContent>

@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Label } from "@/components/ui/label";
 import FreightIcon from "@/components/ui/freight-icon";
 
 const DriverDashboard = () => {
@@ -234,7 +235,7 @@ const DriverDashboard = () => {
                   onClick={() => setActiveTab("profile")}
                   className={`w-full flex items-center space-x-2 px-4 py-2 rounded-md text-sm ${
                     activeTab === "profile" 
-                      ? "bg-primary-100 text-primary-800" 
+                      ? "bg-primary-100 text-primary-800 font-medium" 
                       : "text-slate-600 hover:bg-slate-100"
                   }`}
                 >
@@ -618,8 +619,157 @@ const DriverDashboard = () => {
                 </div>
               </TabsContent>
 
+              {/* Profile tab with detailed driver information */}
+              <TabsContent value="profile">
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h2 className="text-2xl font-bold mb-6">Driver Profile</h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Profile Overview Card */}
+                    <div className="md:col-span-1">
+                      <Card>
+                        <CardContent className="pt-6">
+                          <div className="flex flex-col items-center">
+                            <Avatar className="h-24 w-24 mb-4">
+                              <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh" alt="Driver Avatar" />
+                              <AvatarFallback>RK</AvatarFallback>
+                            </Avatar>
+                            <h3 className="text-xl font-bold">Rajesh Kumar</h3>
+                            <p className="text-sm text-slate-500 mb-4">Professional Truck Driver</p>
+                            
+                            <div className="flex items-center justify-center mb-4">
+                              <Badge className="mr-2 bg-green-100 text-green-800 hover:bg-green-200">
+                                Verified
+                              </Badge>
+                              <Badge variant="outline" className="border-amber-300 text-amber-600">
+                                4.9 ★ Rating
+                              </Badge>
+                            </div>
+                            
+                            <Button variant="outline" className="w-full mb-2">Edit Profile</Button>
+                            <Button variant="outline" className="w-full">Change Password</Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                    
+                    {/* Driver Details */}
+                    <div className="md:col-span-2">
+                      <Card>
+                        <CardHeader>
+                          <CardTitle>Personal Information</CardTitle>
+                          <CardDescription>
+                            Your personal and contact information
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                              <Label className="text-xs text-slate-500">Full Name</Label>
+                              <p className="font-medium">Rajesh Kumar</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Phone Number</Label>
+                              <p className="font-medium">+91 98765 43210</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Email Address</Label>
+                              <p className="font-medium">rajesh.kumar@example.com</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Date of Birth</Label>
+                              <p className="font-medium">15 August 1985</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Driver ID</Label>
+                              <p className="font-medium">DL-202305-4872</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Address</Label>
+                              <p className="font-medium">742, Sector 15, Gurgaon, Haryana</p>
+                            </div>
+                          </div>
+                          
+                          <Separator className="my-4" />
+                          
+                          <CardTitle className="text-lg mb-3">Vehicle Information</CardTitle>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                              <Label className="text-xs text-slate-500">Vehicle Type</Label>
+                              <p className="font-medium">Tata Prima LX 4930.S</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Registration Number</Label>
+                              <p className="font-medium">HR 26 AD 9876</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Insurance Valid Till</Label>
+                              <p className="font-medium">31 December 2023</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Capacity</Label>
+                              <p className="font-medium">25 Tonnes</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Vehicle Age</Label>
+                              <p className="font-medium">3 Years</p>
+                            </div>
+                            <div>
+                              <Label className="text-xs text-slate-500">Last Maintenance</Label>
+                              <p className="font-medium">10 April 2023</p>
+                            </div>
+                          </div>
+                          
+                          <Separator className="my-4" />
+                          
+                          <CardTitle className="text-lg mb-3">Documents</CardTitle>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <Card className="border border-slate-200 p-3">
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <p className="font-medium">Driver's License</p>
+                                  <p className="text-xs text-slate-500">Valid till: 21 Jul 2027</p>
+                                </div>
+                                <Button variant="outline" size="sm">View</Button>
+                              </div>
+                            </Card>
+                            <Card className="border border-slate-200 p-3">
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <p className="font-medium">Vehicle RC</p>
+                                  <p className="text-xs text-slate-500">Valid till: 15 Sep 2026</p>
+                                </div>
+                                <Button variant="outline" size="sm">View</Button>
+                              </div>
+                            </Card>
+                            <Card className="border border-slate-200 p-3">
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <p className="font-medium">Insurance Certificate</p>
+                                  <p className="text-xs text-slate-500">Valid till: 31 Dec 2023</p>
+                                </div>
+                                <Button variant="outline" size="sm">View</Button>
+                              </div>
+                            </Card>
+                            <Card className="border border-slate-200 p-3">
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <p className="font-medium">Pollution Certificate</p>
+                                  <p className="text-xs text-slate-500">Valid till: 5 Feb 2024</p>
+                                </div>
+                                <Button variant="outline" size="sm">View</Button>
+                              </div>
+                            </Card>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+              
               {/* Other tabs would have similar structured content */}
-              {["route", "schedule", "history", "profile", "settings"].map((tab) => (
+              {["route", "schedule", "history", "settings"].map((tab) => (
                 <TabsContent key={tab} value={tab}>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h2 className="text-2xl font-bold mb-6 capitalize">{tab}</h2>
