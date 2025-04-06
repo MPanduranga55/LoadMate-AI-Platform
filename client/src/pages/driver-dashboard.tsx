@@ -13,50 +13,50 @@ import FreightIcon from "@/components/ui/freight-icon";
 const DriverDashboard = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
 
-  // Mock data for the dashboard
+  // Mock data for the dashboard with Indian locations and names
   const availableLoads = [
     {
       id: 1,
-      pickup: "Los Angeles, CA",
-      delivery: "Phoenix, AZ",
+      pickup: "Mumbai, Maharashtra",
+      delivery: "Pune, Maharashtra",
       date: "May 12, 2023",
-      distance: 372,
-      weight: "34,000 lbs",
-      rate: "$2,800",
-      type: "Dry Van",
+      distance: 150,
+      weight: "15,000 kg",
+      rate: "₹21,500",
+      type: "Container",
       matchScore: 98
     },
     {
       id: 2,
-      pickup: "San Francisco, CA",
-      delivery: "Seattle, WA",
+      pickup: "Delhi, NCR",
+      delivery: "Jaipur, Rajasthan",
       date: "May 13, 2023",
-      distance: 808,
-      weight: "42,000 lbs",
-      rate: "$3,950",
+      distance: 270,
+      weight: "19,000 kg",
+      rate: "₹32,400",
       type: "Refrigerated",
       matchScore: 94
     },
     {
       id: 3,
-      pickup: "Portland, OR",
-      delivery: "Boise, ID",
+      pickup: "Chennai, Tamil Nadu",
+      delivery: "Bangalore, Karnataka",
       date: "May 14, 2023",
-      distance: 430,
-      weight: "28,000 lbs",
-      rate: "$2,200",
+      distance: 350,
+      weight: "12,500 kg",
+      rate: "₹18,900",
       type: "Flatbed",
       matchScore: 92
     },
     {
       id: 4,
-      pickup: "Denver, CO",
-      delivery: "Kansas City, MO",
+      pickup: "Kolkata, West Bengal",
+      delivery: "Bhubaneswar, Odisha",
       date: "May 15, 2023",
-      distance: 600,
-      weight: "36,000 lbs",
-      rate: "$2,650",
-      type: "Dry Van",
+      distance: 450,
+      weight: "16,000 kg",
+      rate: "₹24,300",
+      type: "Open Body",
       matchScore: 89
     }
   ];
@@ -64,9 +64,9 @@ const DriverDashboard = () => {
   const upcomingDeliveries = [
     {
       id: 101,
-      shipper: "Global Electronics Inc.",
-      pickup: "Sacramento, CA",
-      delivery: "Las Vegas, NV",
+      shipper: "Reliance Industries Ltd.",
+      pickup: "Ahmedabad, Gujarat",
+      delivery: "Surat, Gujarat",
       pickupDate: "May 10, 2023",
       deliveryDate: "May 11, 2023",
       status: "In Transit",
@@ -74,9 +74,9 @@ const DriverDashboard = () => {
     },
     {
       id: 102,
-      shipper: "Western Distributors",
-      pickup: "Reno, NV",
-      delivery: "Salt Lake City, UT",
+      shipper: "Tata Logistics",
+      pickup: "Hyderabad, Telangana",
+      delivery: "Vijayawada, Andhra Pradesh",
       pickupDate: "May 16, 2023",
       deliveryDate: "May 17, 2023",
       status: "Scheduled",
@@ -88,21 +88,21 @@ const DriverDashboard = () => {
     {
       id: 201,
       date: "May 5, 2023",
-      amount: "$3,450",
+      amount: "₹28,450",
       ref: "INV-87652",
       status: "Paid"
     },
     {
       id: 202,
       date: "April 28, 2023",
-      amount: "$2,920",
+      amount: "₹22,920",
       ref: "INV-87523",
       status: "Paid"
     },
     {
       id: 203,
       date: "April 22, 2023",
-      amount: "$3,100",
+      amount: "₹25,100",
       ref: "INV-87312",
       status: "Paid"
     }
@@ -273,7 +273,7 @@ const DriverDashboard = () => {
                   <Card>
                     <CardHeader className="pb-2">
                       <CardTitle className="text-sm font-medium text-slate-500">Weekly Earnings</CardTitle>
-                      <CardDescription className="text-2xl font-bold">$4,320</CardDescription>
+                      <CardDescription className="text-2xl font-bold">₹35,850</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-xs text-green-600 font-medium">
@@ -282,11 +282,11 @@ const DriverDashboard = () => {
                     </CardContent>
                   </Card>
 
-                  {/* Miles Driven */}
+                  {/* Kilometers Driven */}
                   <Card>
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-sm font-medium text-slate-500">Miles Driven</CardTitle>
-                      <CardDescription className="text-2xl font-bold">2,542</CardDescription>
+                      <CardTitle className="text-sm font-medium text-slate-500">Kilometers Driven</CardTitle>
+                      <CardDescription className="text-2xl font-bold">4,092</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-xs text-green-600 font-medium">
@@ -328,11 +328,11 @@ const DriverDashboard = () => {
                                   {load.type}
                                 </Badge>
                                 <div className="mt-2 font-medium">{load.pickup} → {load.delivery}</div>
-                                <div className="text-sm text-slate-500">{load.date} • {load.distance} mi • {load.weight}</div>
+                                <div className="text-sm text-slate-500">{load.date} • {load.distance} km • {load.weight}</div>
                               </div>
                               <div className="text-right">
                                 <div className="text-lg font-bold">{load.rate}</div>
-                                <div className="text-sm text-green-600">${(parseInt(load.rate.replace(/\D/g, '')) / load.distance).toFixed(2)}/mi</div>
+                                <div className="text-sm text-green-600">₹{(parseInt(load.rate.replace(/\D/g, '')) / load.distance).toFixed(2)}/km</div>
                               </div>
                             </div>
                             <div className="flex justify-between items-center">
@@ -456,8 +456,8 @@ const DriverDashboard = () => {
                         </div>
                         <div>
                           <div className="flex justify-between mb-1">
-                            <span className="text-sm font-medium">Miles This Month</span>
-                            <span className="text-sm font-medium">8,742</span>
+                            <span className="text-sm font-medium">Kilometers This Month</span>
+                            <span className="text-sm font-medium">14,069</span>
                           </div>
                           <Progress value={72} className="h-2" />
                         </div>
@@ -487,14 +487,14 @@ const DriverDashboard = () => {
                               <h3 className="text-lg font-bold mb-2">{load.pickup} → {load.delivery}</h3>
                               <div className="text-sm text-slate-600 grid grid-cols-2 gap-x-4 gap-y-1">
                                 <div>Date: {load.date}</div>
-                                <div>Distance: {load.distance} miles</div>
+                                <div>Distance: {load.distance} km</div>
                                 <div>Weight: {load.weight}</div>
                                 <div>Equipment: {load.type}</div>
                               </div>
                             </div>
                             <div className="flex flex-col items-end justify-between">
                               <div className="text-2xl font-bold text-right mb-4 md:mb-0">{load.rate}</div>
-                              <div className="text-sm text-green-600 mb-4 md:mb-0">${(parseInt(load.rate.replace(/\D/g, '')) / load.distance).toFixed(2)}/mi</div>
+                              <div className="text-sm text-green-600 mb-4 md:mb-0">₹{(parseInt(load.rate.replace(/\D/g, '')) / load.distance).toFixed(2)}/km</div>
                               <div className="flex gap-2">
                                 <Button variant="outline">Details</Button>
                                 <Button>Book Load</Button>
