@@ -71,9 +71,13 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
 
   const onDriverSubmit = (data: DriverLoginValues) => {
     console.log("Driver login data:", data);
-    // Close the modal and navigate to driver dashboard
+    // Instead of submitting the form normally, we'll directly navigate
+    // This helps avoid the browser's password save dialog in development environment
     onClose();
     navigate("/driver");
+    
+    // Clear form data after submission for security
+    driverForm.reset();
   };
 
   return (
@@ -147,13 +151,14 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
           </TabsContent>
 
           <TabsContent value="driver" className="py-4">
-            <form onSubmit={driverForm.handleSubmit(onDriverSubmit)} className="space-y-4">
+            <form onSubmit={driverForm.handleSubmit(onDriverSubmit)} className="space-y-4" autoComplete="off">
               <div className="space-y-2">
                 <Label htmlFor="driver-email">Email</Label>
                 <Input 
                   id="driver-email" 
                   type="email" 
                   placeholder="your@email.com" 
+                  autoComplete="username"
                   {...driverForm.register("email")} 
                 />
                 {driverForm.formState.errors.email && (
@@ -167,6 +172,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
                   id="driver-password" 
                   type="password" 
                   placeholder="********" 
+                  autoComplete="current-password"
                   {...driverForm.register("password")} 
                 />
                 {driverForm.formState.errors.password && (
@@ -186,6 +192,19 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
               </div>
 
               <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800">Sign In</Button>
+              
+              {/* Quick access button for demo */}
+              <Button 
+                type="button" 
+                variant="outline" 
+                className="w-full mt-2"
+                onClick={() => {
+                  onClose();
+                  navigate("/driver");
+                }}
+              >
+                Demo Access (Skip Login)
+              </Button>
               
               <div className="text-center mt-4">
                 <p className="text-sm text-slate-600">New to FreightMate AI? <a href="#" className="text-blue-600 hover:underline">Create an account</a></p>
