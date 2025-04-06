@@ -127,11 +127,11 @@ const DriverDashboard = () => {
             
             <div className="flex items-center space-x-2">
               <Avatar>
-                <AvatarImage src="" />
-                <AvatarFallback className="bg-primary-100 text-primary-800">JD</AvatarFallback>
+                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh" />
+                <AvatarFallback className="bg-primary-100 text-primary-800">RK</AvatarFallback>
               </Avatar>
               <div>
-                <p className="text-sm font-medium">John Driver</p>
+                <p className="text-sm font-medium">Rajesh Kumar</p>
                 <p className="text-xs text-slate-500">Professional Driver</p>
               </div>
             </div>
@@ -271,7 +271,7 @@ const DriverDashboard = () => {
               <TabsContent value="dashboard" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   {/* Weekly Earnings */}
-                  <Card>
+                  <Card className="card-hover-effect slide-in-left">
                     <CardHeader className="pb-2">
                       <CardTitle className="text-sm font-medium text-slate-500">Weekly Earnings</CardTitle>
                       <CardDescription className="text-2xl font-bold">₹35,850</CardDescription>
@@ -284,7 +284,7 @@ const DriverDashboard = () => {
                   </Card>
 
                   {/* Kilometers Driven */}
-                  <Card>
+                  <Card className="card-hover-effect fade-in">
                     <CardHeader className="pb-2">
                       <CardTitle className="text-sm font-medium text-slate-500">Kilometers Driven</CardTitle>
                       <CardDescription className="text-2xl font-bold">4,092</CardDescription>
@@ -297,7 +297,7 @@ const DriverDashboard = () => {
                   </Card>
 
                   {/* Load Offers */}
-                  <Card>
+                  <Card className="card-hover-effect slide-in-right">
                     <CardHeader className="pb-2">
                       <CardTitle className="text-sm font-medium text-slate-500">Load Offers</CardTitle>
                       <CardDescription className="text-2xl font-bold">24</CardDescription>
@@ -312,7 +312,7 @@ const DriverDashboard = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   {/* Top Match Loads */}
-                  <Card className="md:col-span-2">
+                  <Card className="md:col-span-2 card-hover-effect fade-in">
                     <CardHeader>
                       <CardTitle>Top Match Loads</CardTitle>
                       <CardDescription>
@@ -321,11 +321,11 @@ const DriverDashboard = () => {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        {availableLoads.slice(0, 2).map((load) => (
-                          <div key={load.id} className="border border-slate-200 rounded-lg p-4">
+                        {availableLoads.slice(0, 2).map((load, index) => (
+                          <div key={load.id} className={`border border-slate-200 rounded-lg p-4 card-hover-effect ${index === 0 ? 'slide-in-left' : 'slide-in-right'}`}>
                             <div className="flex justify-between items-start mb-3">
                               <div>
-                                <Badge className="bg-primary-100 text-primary-800 hover:bg-primary-200">
+                                <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">
                                   {load.type}
                                 </Badge>
                                 <div className="mt-2 font-medium">{load.pickup} → {load.delivery}</div>
@@ -354,7 +354,7 @@ const DriverDashboard = () => {
                   </Card>
 
                   {/* Upcoming Deliveries */}
-                  <Card>
+                  <Card className="card-hover-effect fade-in">
                     <CardHeader>
                       <CardTitle>Active Deliveries</CardTitle>
                       <CardDescription>
@@ -364,7 +364,7 @@ const DriverDashboard = () => {
                     <CardContent>
                       <div className="space-y-4">
                         {upcomingDeliveries.filter(d => d.status === "In Transit").map((delivery) => (
-                          <div key={delivery.id} className="border border-slate-200 rounded-lg p-4">
+                          <div key={delivery.id} className="border border-slate-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
                             <div className="mb-2">
                               <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">
                                 {delivery.status}
@@ -767,9 +767,216 @@ const DriverDashboard = () => {
                   </div>
                 </div>
               </TabsContent>
+              {/* Route Planning Tab */}
+              <TabsContent value="route">
+                <div className="bg-white p-6 rounded-lg shadow-sm fade-in">
+                  <h2 className="text-2xl font-bold mb-6">Route Planning</h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="md:col-span-1">
+                      <Card className="card-hover-effect">
+                        <CardHeader>
+                          <CardTitle>Plan Your Route</CardTitle>
+                          <CardDescription>
+                            Optimize your journey with AI route planning
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-4">
+                            <div>
+                              <Label htmlFor="origin">Origin</Label>
+                              <select id="origin" className="w-full p-2 border border-gray-200 rounded-md">
+                                <option value="Mumbai">Mumbai, Maharashtra</option>
+                                <option value="Delhi">Delhi, NCR</option>
+                                <option value="Kolkata">Kolkata, West Bengal</option>
+                                <option value="Chennai">Chennai, Tamil Nadu</option>
+                                <option value="Bangalore">Bangalore, Karnataka</option>
+                              </select>
+                            </div>
+                            
+                            <div>
+                              <Label htmlFor="destination">Destination</Label>
+                              <select id="destination" className="w-full p-2 border border-gray-200 rounded-md">
+                                <option value="Pune">Pune, Maharashtra</option>
+                                <option value="Jaipur">Jaipur, Rajasthan</option>
+                                <option value="Hyderabad">Hyderabad, Telangana</option>
+                                <option value="Ahmedabad">Ahmedabad, Gujarat</option>
+                                <option value="Surat">Surat, Gujarat</option>
+                              </select>
+                            </div>
+                            
+                            <div>
+                              <Label htmlFor="vehicleType">Vehicle Type</Label>
+                              <select id="vehicleType" className="w-full p-2 border border-gray-200 rounded-md">
+                                <option value="container">Container Truck</option>
+                                <option value="refrigerated">Refrigerated Truck</option>
+                                <option value="flatbed">Flatbed Truck</option>
+                                <option value="openBody">Open Body Truck</option>
+                              </select>
+                            </div>
+                            
+                            <div>
+                              <Label htmlFor="loadWeight">Load Weight (kg)</Label>
+                              <input 
+                                type="number" 
+                                id="loadWeight" 
+                                className="w-full p-2 border border-gray-200 rounded-md"
+                                placeholder="15000" 
+                              />
+                            </div>
+                            
+                            <div>
+                              <Label htmlFor="departureDate">Departure Date</Label>
+                              <input 
+                                type="date" 
+                                id="departureDate" 
+                                className="w-full p-2 border border-gray-200 rounded-md" 
+                              />
+                            </div>
+                            
+                            <Button className="w-full">Calculate Optimal Route</Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                      
+                      <Card className="mt-6 card-hover-effect">
+                        <CardHeader>
+                          <CardTitle>Route Metrics</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3">
+                            <div className="flex justify-between">
+                              <span className="text-sm font-medium">Distance:</span>
+                              <span className="text-sm">1,450 km</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-sm font-medium">Estimated Time:</span>
+                              <span className="text-sm">22 hrs 30 mins</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-sm font-medium">Fuel Estimate:</span>
+                              <span className="text-sm">290 liters</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-sm font-medium">Toll Costs:</span>
+                              <span className="text-sm">₹3,450</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-sm font-medium">Rest Stops:</span>
+                              <span className="text-sm">4 recommended</span>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                    
+                    <div className="md:col-span-2">
+                      <Card className="h-full card-hover-effect">
+                        <CardHeader>
+                          <CardTitle>Map View</CardTitle>
+                          <CardDescription>
+                            Interactive map with optimized route
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-2">
+                          <div className="relative w-full h-[500px] bg-slate-100 rounded-md overflow-hidden border-2 border-slate-200">
+                            <div className="absolute inset-0 bg-white">
+                              {/* India Map SVG with route path animation */}
+                              <svg viewBox="0 0 800 800" className="w-full h-full">
+                                {/* Simplified India Map Background */}
+                                <path d="M200,100 Q300,50 400,100 Q500,150 600,100 Q650,200 700,300 Q650,400 700,500 Q650,600 600,700 Q500,650 400,700 Q300,750 200,700 Q150,600 100,500 Q150,400 100,300 Q150,200 200,100" 
+                                  fill="#f0f9ff" stroke="#cbd5e1" strokeWidth="2" />
+                                
+                                {/* Major Cities as Points */}
+                                <circle cx="250" cy="350" r="8" fill="#3b82f6" className="pulse" /> {/* Mumbai */}
+                                <text x="265" y="350" fontSize="12" fill="#1e40af">Mumbai</text>
+                                
+                                <circle cx="320" cy="250" r="6" fill="#64748b" /> {/* Delhi */}
+                                <text x="335" y="250" fontSize="12" fill="#334155">Delhi</text>
+                                
+                                <circle cx="450" cy="400" r="6" fill="#64748b" /> {/* Bangalore */}
+                                <text x="465" y="400" fontSize="12" fill="#334155">Bangalore</text>
+                                
+                                <circle cx="500" cy="330" r="6" fill="#64748b" /> {/* Hyderabad */}
+                                <text x="515" y="330" fontSize="12" fill="#334155">Hyderabad</text>
+                                
+                                <circle cx="450" cy="180" r="6" fill="#64748b" /> {/* Kolkata */}
+                                <text x="465" y="180" fontSize="12" fill="#334155">Kolkata</text>
+                                
+                                <circle cx="350" cy="350" r="8" fill="#ef4444" className="pulse" /> {/* Pune */}
+                                <text x="365" y="350" fontSize="12" fill="#b91c1c">Pune</text>
+                                
+                                {/* Animated Route Path */}
+                                <path 
+                                  d="M250,350 C270,340 290,330 310,345 C330,360 340,350 350,350" 
+                                  fill="none" 
+                                  stroke="#3b82f6" 
+                                  strokeWidth="4" 
+                                  strokeDasharray="200"
+                                  strokeDashoffset="200"
+                                  style={{
+                                    animation: "dash 2s linear forwards"
+                                  }}
+                                />
+                                
+                                {/* Path animation */}
+                                <style>
+                                  {`
+                                    @keyframes dash {
+                                      to {
+                                        stroke-dashoffset: 0;
+                                      }
+                                    }
+                                  `}
+                                </style>
+                                
+                                {/* Alternative Route (Dashed) */}
+                                <path 
+                                  d="M250,350 Q300,380 350,350" 
+                                  fill="none" 
+                                  stroke="#94a3b8" 
+                                  strokeWidth="3" 
+                                  strokeDasharray="5,5" 
+                                />
+                                
+                                {/* Traffic Indicators */}
+                                <rect x="280" y="335" width="20" height="10" fill="#22c55e" /> {/* Good traffic */}
+                                <rect x="310" y="345" width="20" height="10" fill="#f59e0b" /> {/* Moderate traffic */}
+                                
+                                {/* Legend */}
+                                <rect x="650" y="700" width="20" height="10" fill="#3b82f6" />
+                                <text x="675" y="708" fontSize="10" fill="#334155">Optimal Route</text>
+                                
+                                <rect x="650" y="720" width="20" height="10" fill="none" stroke="#94a3b8" strokeWidth="2" strokeDasharray="5,5" />
+                                <text x="675" y="728" fontSize="10" fill="#334155">Alternative Route</text>
+                                
+                                <rect x="650" y="740" width="20" height="10" fill="#22c55e" />
+                                <text x="675" y="748" fontSize="10" fill="#334155">Good Traffic</text>
+                                
+                                <rect x="650" y="760" width="20" height="10" fill="#f59e0b" />
+                                <text x="675" y="768" fontSize="10" fill="#334155">Moderate Traffic</text>
+                              </svg>
+                            </div>
+                          </div>
+                        </CardContent>
+                        <CardFooter>
+                          <div className="w-full flex justify-between items-center">
+                            <div className="text-sm text-slate-500">
+                              Powered by FreightMate AI Route Optimization
+                            </div>
+                            <Button variant="outline" size="sm">
+                              Get Turn-by-Turn Directions
+                            </Button>
+                          </div>
+                        </CardFooter>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
               
               {/* Other tabs would have similar structured content */}
-              {["route", "schedule", "history", "settings"].map((tab) => (
+              {["schedule", "history", "settings"].map((tab) => (
                 <TabsContent key={tab} value={tab}>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h2 className="text-2xl font-bold mb-6 capitalize">{tab}</h2>
