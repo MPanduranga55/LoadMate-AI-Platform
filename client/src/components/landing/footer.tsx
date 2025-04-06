@@ -47,7 +47,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <FreightIcon className="w-8 h-8 text-primary-500" />
-              <span className="text-xl font-bold text-white">FreightMate AI</span>
+              <span className="text-xl font-bold text-white">LoadMate AI</span>
             </div>
             <p className="mb-4">Revolutionizing logistics through AI-powered freight matching and route optimization.</p>
             <div className="flex space-x-4">
@@ -115,7 +115,7 @@ const Footer = () => {
         
         <div className="border-t border-slate-800 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm">© {currentYear} FreightMate AI. All rights reserved.</p>
+            <p className="text-sm">© {currentYear} LoadMate AI. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a href="#" className="text-sm hover:text-white transition-colors">Privacy</a>
               <a href="#" className="text-sm hover:text-white transition-colors">Terms</a>

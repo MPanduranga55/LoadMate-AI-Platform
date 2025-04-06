@@ -116,7 +116,7 @@ const DriverDashboard = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <FreightIcon className="w-8 h-8 text-primary-800" />
-            <span className="text-xl font-bold text-primary-800">FreightMate AI</span>
+            <span className="text-xl font-bold text-primary-800">LoadMate AI</span>
           </Link>
           
           <div className="flex items-center space-x-6">
@@ -962,7 +962,7 @@ const DriverDashboard = () => {
                         <CardFooter>
                           <div className="w-full flex justify-between items-center">
                             <div className="text-sm text-slate-500">
-                              Powered by FreightMate AI Route Optimization
+                              Powered by LoadMate AI Route Optimization
                             </div>
                             <Button variant="outline" size="sm">
                               Get Turn-by-Turn Directions

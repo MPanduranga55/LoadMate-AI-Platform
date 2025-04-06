@@ -108,7 +108,7 @@ const ContactSection = () => {
           <div className="animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Get in Touch</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Have questions about our platform? Ready to see how FreightMate AI can transform your logistics operations? Our team is here to help.
+              Have questions about our platform? Ready to see how LoadMate AI can transform your logistics operations? Our team is here to help.
             </p>
             
             <div className="space-y-6">

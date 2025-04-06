@@ -78,7 +78,7 @@ const BenefitsSection = () => {
             <p className="text-xl font-medium text-amber-300">Up to 85% improvement in matching efficiency</p>
           </div>
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Transform Your Logistics Operations</h3>
-          <p className="text-lg text-primary-100 max-w-2xl mx-auto">FreightMate AI gives you the competitive edge with industry-leading technology that delivers measurable results and superior performance.</p>
+          <p className="text-lg text-primary-100 max-w-2xl mx-auto">LoadMate AI gives you the competitive edge with industry-leading technology that delivers measurable results and superior performance.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">

@@ -28,7 +28,7 @@ const HowItWorksSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
           <span className="inline-block px-4 py-1.5 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-3">Simple 3-Step Process</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How FreightMate AI Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How LoadMate AI Works</h2>
           <p className="text-lg text-slate-600">Our AI-powered platform simplifies freight matching with a straightforward process that saves time and maximizes efficiency for both shippers and carriers.</p>
         </div>
         
@@ -162,7 +162,7 @@ const HowItWorksSection = () => {
         <div className="text-center max-w-xl mx-auto mt-16 animate-on-scroll opacity-0 translate-y-5 transition-all duration-500 ease-out">
           <div className="inline-block p-6 rounded-lg bg-gradient-to-br from-amber-50 to-amber-100 shadow-md mb-6">
             <p className="text-xl font-semibold text-amber-900">
-              "FreightMate AI reduced our empty miles by 27% and increased our carrier network by over 400% in just six months."
+              "LoadMate AI reduced our empty miles by 27% and increased our carrier network by over 400% in just six months."
             </p>
             <div className="mt-4 text-amber-800 font-medium">
               — James Wilson, Operations Director, Global Transit Inc.

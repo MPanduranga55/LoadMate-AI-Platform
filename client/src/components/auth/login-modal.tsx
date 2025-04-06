@@ -207,7 +207,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
               </Button>
               
               <div className="text-center mt-4">
-                <p className="text-sm text-slate-600">New to FreightMate AI? <a href="#" className="text-blue-600 hover:underline">Create an account</a></p>
+                <p className="text-sm text-slate-600">New to LoadMate AI? <a href="#" className="text-blue-600 hover:underline">Create an account</a></p>
               </div>
             </form>
           </TabsContent>

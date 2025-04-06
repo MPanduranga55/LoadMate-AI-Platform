@@ -2,19 +2,19 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    text: "FreightMate AI has transformed our logistics operations. We've reduced empty miles by 28% and improved our carrier matching efficiency by over 40%. The real-time tracking gives us complete visibility into our supply chain.",
+    text: "LoadMate AI has transformed our logistics operations. We've reduced empty miles by 28% and improved our carrier matching efficiency by over 40%. The real-time tracking gives us complete visibility into our supply chain.",
     author: "Michael Rodriguez",
     position: "Logistics Director, Transcorp Shipping",
     rating: 5
   },
   {
-    text: "As a small carrier, finding consistent freight was always challenging. With FreightMate AI, we've increased our load volume by 35% and significantly reduced deadhead miles. The platform is intuitive and the support team is outstanding.",
+    text: "As a small carrier, finding consistent freight was always challenging. With LoadMate AI, we've increased our load volume by 35% and significantly reduced deadhead miles. The platform is intuitive and the support team is outstanding.",
     author: "Sarah Johnson",
     position: "Owner, Johnson Trucking LLC",
     rating: 5
   },
   {
-    text: "We've tried several freight matching platforms, but FreightMate AI's technology is truly revolutionary. The predictive analytics have helped us anticipate market changes and adjust our strategy accordingly. Integration was seamless with our existing systems.",
+    text: "We've tried several freight matching platforms, but LoadMate AI's technology is truly revolutionary. The predictive analytics have helped us anticipate market changes and adjust our strategy accordingly. Integration was seamless with our existing systems.",
     author: "David Chen",
     position: "COO, Pacific Freight Solutions",
     rating: 4.5
